@@ -56,6 +56,7 @@ const SKILLS = [
     group: "Core",
     list: [
       "Flutter",
+      "FlutterFlow",
       "Dart",
       "Java",
       "Python",
@@ -881,41 +882,33 @@ export default function Portfolio() {
         </Section>
                 {/* Footer */}       {" "}
         <footer className="py-10 border-t border-neutral-200/60 dark:border-neutral-800/60">
-                   {" "}
           <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
-                       {" "}
             <div className="flex items-center justify-center gap-2 text-neutral-600 dark:text-neutral-400">
-                            &copy; 2025            {" "}
+              Yared G. Asgedom &copy; {new Date().getFullYear()}
             </div>
-                       {" "}
+
             <div className="flex items-center gap-3">
-                           {" "}
               <a
                 href={PROFILE.github}
                 target="_blank"
                 rel="noreferrer"
                 className="hover:opacity-80"
               >
-                                <Github className="w-4 h-4" />             {" "}
+                <Github className="w-4 h-4" />
               </a>
-                           {" "}
               <a
                 href={PROFILE.linkedin}
                 target="_blank"
                 rel="noreferrer"
                 className="hover:opacity-80"
               >
-                                <Linkedin className="w-4 h-4" />             {" "}
+                <Linkedin className="w-4 h-4" />
               </a>
-                           {" "}
               <a href={`mailto:${PROFILE.email}`} className="hover:opacity-80">
-                                <Mail className="w-4 h-4" />             {" "}
+                <Mail className="w-4 h-4" />
               </a>
-                         {" "}
             </div>
-                     {" "}
           </div>
-                 {" "}
         </footer>
              {" "}
       </div>

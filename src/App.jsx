@@ -187,16 +187,15 @@ const CATEGORIES = [
 // --- UI Helpers ------------------------------------------------------
 const Section = ({ id, title, icon: Icon, children }) => (
   <section id={id} className="scroll-mt-24 py-12 sm:py-16">
-       {" "}
+     
     <div className="max-w-6xl mx-auto px-4">
-           {" "}
+         
       <div className="flex items-center gap-3 mb-6">
-                {Icon && <Icon className="w-6 h-6" />}       {" "}
-        <h2 className="text-2xl sm:text-3xl font-bold">{title}</h2>     {" "}
+                {Icon && <Icon className="w-6 h-6" />}     
+        <h2 className="text-2xl sm:text-3xl font-bold">{title}</h2>   
       </div>
-            {children}   {" "}
+            {children} 
     </div>
-     {" "}
   </section>
 );
 
@@ -251,95 +250,94 @@ export default function Portfolio() {
 
   return (
     <div className={dark ? "dark" : ""}>
-           {" "}
+         
       <div className="min-h-screen bg-neutral-50 text-neutral-900 dark:bg-neutral-950 dark:text-neutral-50 transition-colors">
-                {/* Header */}       {" "}
+                {/* Header */}     
         <header className="sticky top-0 z-40 backdrop-blur border-b border-neutral-200/60 dark:border-neutral-800/60 bg-white/70 dark:bg-neutral-950/50">
-                   {" "}
+                 
           <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-                       {" "}
+                     
             <div className="flex items-center gap-3">
-                           {" "}
+                         
               <div className="w-8 h-8  bg-gradient-to-br from-neutral-200 to-neutral-300 dark:from-neutral-800 dark:to-neutral-700 rounded-2xl">
-                               {" "}
+                             
                 <img src={profile} alt="" className="rounded-full" />           
-                 {" "}
               </div>
-                           {" "}
+                         
               <span className="font-semibold">
                                 {PROFILE.name.split(" ")[0]} • Portfolio        
-                     {" "}
+                   
               </span>
-                         {" "}
+                       
             </div>
-                       {" "}
+                     
             <nav className="hidden sm:flex items-center gap-6 text-sm">
-                           {" "}
+                         
               <a href="#home" className="hover:opacity-80">
-                                Home              {" "}
+                                Home            
               </a>
-                           {" "}
+                         
               <a href="#about" className="hover:opacity-80">
-                                About              {" "}
+                                About            
               </a>
-                           {" "}
+                         
               <a href="#skills" className="hover:opacity-80">
-                                Skills              {" "}
+                                Skills            
               </a>
-                           {" "}
+                         
               <a href="#projects" className="hover:opacity-80">
-                                Projects              {" "}
+                                Projects            
               </a>
-                           {" "}
+                         
               <a href="#experience" className="hover:opacity-80">
-                                Experience              {" "}
+                                Experience            
               </a>
-                           {" "}
+                         
               <a href="#contact" className="hover:opacity-80">
-                                Contact              {" "}
+                                Contact            
               </a>
-                         {" "}
+                       
             </nav>
-                       {" "}
+                     
             <div className="flex items-center gap-2">
-                           {" "}
+                         
               <Button
                 variant="ghost"
                 size="icon"
                 onClick={() => setDark((d) => !d)}
                 aria-label="Toggle theme"
               >
-                               {" "}
+                             
                 {dark ? (
                   <Sun className="w-5 h-5" />
                 ) : (
                   <Moon className="w-5 h-5" />
                 )}
-                             {" "}
+                           
               </Button>
-                           {" "}
+                         
               <Button
                 className="sm:hidden"
                 variant="outline"
                 size="icon"
                 onClick={() => setMenuOpen((m) => !m)}
               >
-                               {" "}
+                             
                 {menuOpen ? (
                   <X className="w-5 h-5" />
                 ) : (
                   <Menu className="w-5 h-5" />
                 )}
-                             {" "}
+                           
               </Button>
-                       {" "}
+                     
             </div>
-                     {" "}
+                   
           </div>
-                   {" "}
+                 
           {menuOpen && (
             <div className="sm:hidden border-t border-neutral-200 dark:border-neutral-800 px-4 py-3 space-y-2">
-                           {" "}
+                         
               {[
                 ["#home", "Home"],
                 ["#about", "About"],
@@ -354,240 +352,238 @@ export default function Portfolio() {
                   onClick={() => setMenuOpen(false)}
                   className="block py-1"
                 >
-                                    {label}               {" "}
+                                    {label}             
                 </a>
               ))}
-                         {" "}
+                       
             </div>
           )}
-                 {" "}
+               
         </header>
-                {/* Hero */}       {" "}
+                {/* Hero */}     
         <Section id="home" title="" icon={null}>
-                   {" "}
+                 
           <div className="grid md:grid-cols-2 gap-8 items-center">
-                       {" "}
+                     
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-                           {" "}
+                         
               <h1 className="text-3xl sm:text-5xl font-bold leading-tight">
-                                {PROFILE.name}             {" "}
+                                {PROFILE.name}           
               </h1>
-                           {" "}
+                         
               <p className="mt-3 text-lg text-neutral-600 dark:text-neutral-300">
-                                {PROFILE.title}             {" "}
+                                {PROFILE.title}           
               </p>
-                           {" "}
+                         
               <p className="mt-4 max-w-prose text-neutral-700 dark:text-neutral-300">
-                                {PROFILE.intro}             {" "}
+                                {PROFILE.intro}           
               </p>
-                           {" "}
+                         
               <div className="mt-6 flex flex-wrap items-center gap-3">
-                               {" "}
+                             
                 <Badge className="rounded-2xl px-3 py-1" variant="secondary">
                                     <MapPin className="w-3.5 h-3.5 mr-1" />{" "}
-                  {PROFILE.location}               {" "}
+                  {PROFILE.location}             
                 </Badge>
-                               {" "}
+                             
                 <Badge className="rounded-2xl px-3 py-1" variant="secondary">
                                     <Phone className="w-4 h-4" />{" "}
-                  {PROFILE.phone}               {" "}
+                  {PROFILE.phone}             
                 </Badge>
-                               {" "}
+                             
                 <a href={PROFILE.github} target="_blank" rel="noreferrer">
-                                   {" "}
+                                 
                   <Button variant="outline" className="gap-2">
                                         <Github className="w-4 h-4" /> GitHub  
-                                   {" "}
+                                 
                   </Button>
-                                 {" "}
+                               
                 </a>
-                               {" "}
+                             
                 <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
-                                   {" "}
+                                 
                   <Button variant="outline" className="gap-2">
                                         <Linkedin className="w-4 h-4" />{" "}
-                    LinkedIn                  {" "}
+                    LinkedIn                
                   </Button>
-                                 {" "}
+                               
                 </a>
-                               {" "}
+                             
                 <a href={yaredCV} download>
-                                   {" "}
+                                 
                   <Button className="gap-2 cursor-pointer">
                                         <ArrowDownToLine className="w-4 h-4" />{" "}
-                    Download CV                  {" "}
+                    Download CV                
                   </Button>
-                                 {" "}
+                               
                 </a>
-                             {" "}
+                           
               </div>
-                         {" "}
+                       
             </motion.div>
-                       {" "}
+                     
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-                           {" "}
+                         
               <Card className="rounded-2xl">
-                               {" "}
+                             
                 <CardContent className="p-4 space-y-2">
-                                   {" "}
+                                 
                   <h3 className="font-semibold text-lg">Download APKs</h3>     
-                             {" "}
+                           
                   <p className="text-sm text-neutral-600 dark:text-neutral-400">
                                         Click below to download the app files  
-                                   {" "}
+                                 
                   </p>
-                                   {" "}
+                                 
                   <ul className="space-y-1">
-                                       {" "}
+                                     
                     {apks.map((apk, idx) => (
                       <li key={idx}>
-                                               {" "}
+                                             
                         <a
                           href={apk.file}
                           download
                           className="flex items-center justify-between p-2 bg-neutral-100 dark:bg-neutral-800 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors cursor-pointer"
                         >
                                                     <span>{apk.name}</span>     
-                                             {" "}
+                                           
                           <ArrowDownToLine className="w-4 h-4" />               
-                                 {" "}
+                               
                         </a>
-                                             {" "}
+                                           
                       </li>
                     ))}
-                                     {" "}
+                                   
                   </ul>
-                                 {" "}
+                               
                 </CardContent>
-                             {" "}
+                           
               </Card>
-                         {" "}
+                       
             </motion.div>
-                     {" "}
+                   
           </div>
-                 {" "}
+               
         </Section>
-                {/* About */}       {" "}
+                {/* About */}     
         <Section id="about" title="About Me" icon={Code2}>
-                   {" "}
+                 
           <div className="grid md:grid-cols-3 gap-6">
-                       {" "}
+                     
             <Card className="md:col-span-2 rounded-2xl">
-                           {" "}
+                         
               <CardHeader>
-                                <CardTitle>Who I Am</CardTitle>             {" "}
+                                <CardTitle>Who I Am</CardTitle>           
               </CardHeader>
-                           {" "}
+                         
               <CardContent className="space-y-3">
-                               {" "}
+                             
                 <p>
-                                    I'm a mobile developer with nearly two years
-                  building Flutter                   apps. I enjoy collaborating
-                  with teams and believe complex                   problems are
-                  solved best together. Outside work, I like                  
-                  watching movies, listening to a music, working out, and      
-                              spending time with loved ones.                {" "}
+                  I'm a mobile developer with nearly two years building Flutter
+                  apps. I enjoy collaborating with teams and believe complex
+                  problems are solved best together. Outside work, I like
+                  watching movies, listening to a music, working out, and
+                  spending time with loved ones.              
                 </p>
-                               {" "}
+                             
                 <p>
-                                    I’m currently focusing on applying AI in
-                  real‑world apps,                   especially healthcare and
-                  fintech use cases.                {" "}
+                  I’m currently focusing on applying AI in real‑world apps,
+                  especially healthcare and fintech use cases.              
                 </p>
-                             {" "}
+                           
               </CardContent>
-                         {" "}
+                       
             </Card>
-                       {" "}
+                     
             <Card className="rounded-2xl">
-                           {" "}
+                         
               <CardHeader>
-                                <CardTitle>Quick Info</CardTitle>             {" "}
+                                <CardTitle>Quick Info</CardTitle>           
               </CardHeader>
-                           {" "}
+                         
               <CardContent className="space-y-2 text-sm">
-                               {" "}
+                             
                 <div className="flex items-center gap-2">
                                     <Mail className="w-4 h-4" /> {PROFILE.email}
-                                 {" "}
+                               
                 </div>
-                               {" "}
+                             
                 <div className="flex items-center gap-2">
                                     <Phone className="w-4 h-4" />{" "}
-                  {PROFILE.phone}               {" "}
+                  {PROFILE.phone}             
                 </div>
-                               {" "}
+                             
                 <div className="flex items-center gap-2">
                                     <MapPin className="w-4 h-4" />{" "}
-                  {PROFILE.location}               {" "}
+                  {PROFILE.location}             
                 </div>
-                             {" "}
+                           
               </CardContent>
-                         {" "}
+                       
             </Card>
-                     {" "}
+                   
           </div>
-                 {" "}
+               
         </Section>
-                {/* Skills */}       {" "}
+                {/* Skills */}     
         <Section id="skills" title="Skills" icon={ChevronRight}>
-                   {" "}
+                 
           <div className="grid md:grid-cols-3 gap-4">
-                       {" "}
+                     
             {SKILLS.map((s) => (
               <Card key={s.group} className="rounded-2xl">
-                               {" "}
+                             
                 <CardHeader>
-                                   {" "}
+                                 
                   <CardTitle className="flex items-center gap-2">
                                         <ChevronRight className="w-4 h-4" />{" "}
-                    {s.group}                 {" "}
+                    {s.group}               
                   </CardTitle>
-                                 {" "}
+                               
                 </CardHeader>
-                               {" "}
+                             
                 <CardContent className="flex flex-wrap gap-2">
-                                   {" "}
+                                 
                   {s.list.map((k) => (
                     <Badge
                       key={k}
                       variant="secondary"
                       className="rounded-2xl px-3 py-1"
                     >
-                                            {k}                   {" "}
+                                            {k}                 
                     </Badge>
                   ))}
-                                 {" "}
+                               
                 </CardContent>
-                             {" "}
+                           
               </Card>
             ))}
-                     {" "}
+                   
           </div>
-                 {" "}
+               
         </Section>
-                {/* Projects */}       {" "}
+                {/* Projects */}     
         <Section id="projects" title="Projects" icon={Briefcase}>
-                   {" "}
+                 
           <Card className="rounded-2xl mb-4">
-                       {" "}
+                     
             <CardContent className="p-4">
-                           {" "}
+                         
               <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between">
-                               {" "}
+                             
                 <div className="flex gap-2 items-center">
                                     <Filter className="w-4 h-4" />             
-                     {" "}
+                   
                   <div className="flex gap-2 flex-wrap">
-                                       {" "}
+                                     
                     {CATEGORIES.map((c) => (
                       <Button
                         key={c}
@@ -596,49 +592,49 @@ export default function Portfolio() {
                         onClick={() => setCat(c)}
                         className="rounded-2xl"
                       >
-                                                {c}                     {" "}
+                                                {c}                   
                       </Button>
                     ))}
-                                     {" "}
+                                   
                   </div>
-                                 {" "}
+                               
                 </div>
-                               {" "}
+                             
                 <div className="flex gap-2 items-center max-w-sm w-full">
                                     <Search className="w-4 h-4" />             
-                     {" "}
+                   
                   <Input
                     placeholder="Search projects, tech…"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
                   />
-                                 {" "}
+                               
                 </div>
-                             {" "}
+                           
               </div>
-                         {" "}
+                       
             </CardContent>
-                     {" "}
+                   
           </Card>
-                   {" "}
+                 
           <div className="grid md:grid-cols-2 gap-6">
-                       {" "}
+                     
             {filtered.map((p) => (
               <Card key={p.title} className="rounded-2xl overflow-hidden">
-                               {" "}
+                             
                 <CardHeader>
                                     <CardTitle>{p.title}</CardTitle>           
-                     {" "}
+                   
                 </CardHeader>
-                               {" "}
+                             
                 <CardContent className="space-y-3">
-                                   {" "}
+                                 
                   <div className="aspect-video rounded-xl bg-neutral-200/60 dark:bg-neutral-800/60 grid place-items-center">
-                                       {" "}
+                                     
                     {/* <span className="text-sm text-neutral-600 dark:text-neutral-400">
                       Add screenshots: {p.images[0]}
                     </span> */}
-                                       {" "}
+                                     
                     <img
                       src={p.images[0]}
                       alt={`${p.title} screenshot`}
@@ -647,240 +643,239 @@ export default function Portfolio() {
                         (e.target.src = "/assets/fallback-image.png")
                       } // Optional
                     />
-                                     {" "}
+                                   
                   </div>
-                                   {" "}
+                                 
                   <p className="text-sm text-neutral-700 dark:text-neutral-300">
-                                        {p.summary}                 {" "}
+                                        {p.summary}               
                   </p>
-                                   {" "}
+                                 
                   <div className="flex flex-wrap gap-2">
-                                       {" "}
+                                     
                     {p.highlights.map((h) => (
                       <Badge
                         key={h}
                         className="rounded-2xl px-3 py-1"
                         variant="secondary"
                       >
-                                                {h}                     {" "}
+                                                {h}                   
                       </Badge>
                     ))}
-                                     {" "}
+                                   
                   </div>
-                                   {" "}
+                                 
                   <div className="flex flex-wrap gap-2">
-                                       {" "}
+                                     
                     {p.tech.map((t) => (
                       <Badge key={t} className="rounded-2xl px-3 py-1">
-                                                {t}                     {" "}
+                                                {t}                   
                       </Badge>
                     ))}
-                                     {" "}
+                                   
                   </div>
-                                   {" "}
+                                 
                   <div className="flex gap-2 pt-2">
-                                       {" "}
+                                     
                     <a href={p.links.demo} target="_blank" rel="noreferrer">
-                                           {" "}
+                                         
                       <Button variant="outline" className="gap-2">
-                                               {" "}
+                                             
                         <ExternalLink className="w-4 h-4" /> Demo              
-                               {" "}
+                             
                       </Button>
-                                         {" "}
+                                       
                     </a>
-                                       {" "}
+                                     
                     <a href={p.links.repo} target="_blank" rel="noreferrer">
-                                           {" "}
+                                         
                       <Button variant="outline" className="gap-2">
                                                 <Github className="w-4 h-4" />{" "}
-                        Code                      {" "}
+                        Code                    
                       </Button>
-                                         {" "}
+                                       
                     </a>
-                                     {" "}
+                                   
                   </div>
-                                 {" "}
+                               
                 </CardContent>
-                             {" "}
+                           
               </Card>
             ))}
-                     {" "}
+                   
           </div>
-                 {" "}
+               
         </Section>
-                {/* Experience */}       {" "}
+                {/* Experience */}     
         <Section id="experience" title="Experience" icon={Briefcase}>
-                   {" "}
+                 
           <div className="grid md:grid-cols-2 gap-6">
-                       {" "}
+                     
             {EXPERIENCE.map((e) => (
               <Card key={e.company} className="rounded-2xl">
-                               {" "}
+                             
                 <CardHeader>
-                                   {" "}
+                                 
                   <CardTitle className="flex items-center justify-between">
-                                       {" "}
+                                     
                     <span>
                                             {e.role} • {e.company}             
-                           {" "}
+                         
                     </span>
-                                       {" "}
+                                     
                     <span className="text-sm font-normal text-neutral-600 dark:text-neutral-400">
-                                            {e.period}                   {" "}
+                                            {e.period}                 
                     </span>
-                                     {" "}
+                                   
                   </CardTitle>
-                                 {" "}
+                               
                 </CardHeader>
-                               {" "}
+                             
                 <CardContent>
-                                   {" "}
+                                 
                   <ul className="list-disc ml-5 space-y-2 text-sm">
-                                       {" "}
+                                     
                     {e.points.map((p, i) => (
                       <li key={i}>{p}</li>
                     ))}
-                                     {" "}
+                                   
                   </ul>
-                                 {" "}
+                               
                 </CardContent>
-                             {" "}
+                           
               </Card>
             ))}
-                       {" "}
+                     
             <Card className="rounded-2xl">
-                           {" "}
+                         
               <CardHeader>
-                               {" "}
+                             
                 <CardTitle className="flex items-center gap-2">
                                     <GraduationCap className="w-5 h-5" />{" "}
-                  Education                {" "}
+                  Education              
                 </CardTitle>
-                             {" "}
+                           
               </CardHeader>
-                           {" "}
+                         
               <CardContent className="space-y-3 text-sm">
-                               {" "}
+                             
                 {EDUCATION.map((ed) => (
                   <div key={ed.school}>
-                                       {" "}
+                                     
                     <div className="font-medium">{ed.school}</div>             
-                         {" "}
+                       
                     <div className="text-neutral-600 dark:text-neutral-400">
-                                            {ed.org}                   {" "}
+                                            {ed.org}                 
                     </div>
-                                       {" "}
+                                     
                     <div className="text-neutral-600 dark:text-neutral-500">
-                                            {ed.period}                   {" "}
+                                            {ed.period}                 
                     </div>
-                                     {" "}
+                                   
                   </div>
                 ))}
-                             {" "}
+                           
               </CardContent>
-                         {" "}
+                       
             </Card>
-                     {" "}
+                   
           </div>
-                 {" "}
+               
         </Section>
-                {/* Contact */}       {" "}
+                {/* Contact */}     
         <Section id="contact" title="Contact" icon={Mail}>
-                   {" "}
+                 
           <div className="grid md:grid-cols-2 gap-6">
-                       {" "}
+                     
             <Card className="rounded-2xl">
-                           {" "}
+                         
               <CardHeader>
                                 <CardTitle>Let's work together</CardTitle>     
-                       {" "}
+                     
               </CardHeader>
-                           {" "}
+                         
               <CardContent className="space-y-3 text-sm">
-                               {" "}
+                             
                 <p>
                                     Got a project or role in mind? I’m open to
                   freelance work and                   full‑time opportunities.
-                  Email me or message me on LinkedIn.                {" "}
+                  Email me or message me on LinkedIn.              
                 </p>
-                               {" "}
+                             
                 <div className="flex flex-wrap gap-2">
-                                   {" "}
+                                 
                   <a href={`mailto:${PROFILE.email}`}>
-                                       {" "}
+                                     
                     <Button className="gap-2">
                                             <Mail className="w-4 h-4" /> Email  
-                                       {" "}
+                                     
                     </Button>
-                                     {" "}
+                                   
                   </a>
-                                   {" "}
+                                 
                   <a href={PROFILE.linkedin} target="_blank" rel="noreferrer">
-                                       {" "}
+                                     
                     <Button variant="outline" className="gap-2">
                                             <Linkedin className="w-4 h-4" />{" "}
-                      LinkedIn                    {" "}
+                      LinkedIn                  
                     </Button>
-                                     {" "}
+                                   
                   </a>
-                                   {" "}
+                                 
                   <a href={PROFILE.github} target="_blank" rel="noreferrer">
-                                       {" "}
+                                     
                     <Button variant="outline" className="gap-2">
                                             <Github className="w-4 h-4" />{" "}
-                      GitHub                    {" "}
+                      GitHub                  
                     </Button>
-                                     {" "}
+                                   
                   </a>
-                                 {" "}
+                               
                 </div>
-                             {" "}
+                           
               </CardContent>
-                         {" "}
+                       
             </Card>
-                       {" "}
+                     
             <Card className="rounded-2xl">
-                           {" "}
+                         
               <CardHeader>
                                 <CardTitle>Quick message</CardTitle>           
-                 {" "}
               </CardHeader>
-                           {" "}
+                         
               <CardContent>
-                               {" "}
+                             
                 <form ref={form} onSubmit={sendEmail} className="space-y-3">
-                                   {" "}
+                                 
                   <Input name="from_name" placeholder="Your name" required />   
-                               {" "}
+                             
                   <Input
                     name="from_email"
                     type="email"
                     placeholder="Your email"
                     required
                   />
-                                   {" "}
+                                 
                   <Textarea
                     name="message"
                     placeholder="Your message"
                     rows={5}
                     required
                   />
-                                   {" "}
+                                 
                   <Button type="submit" className="w-full">
-                                        Send                  {" "}
+                                        Send                
                   </Button>
-                                 {" "}
+                               
                 </form>
-                             {" "}
+                           
               </CardContent>
-                         {" "}
+                       
             </Card>
-                     {" "}
+                   
           </div>
-                 {" "}
+               
         </Section>
-                {/* Footer */}       {" "}
+                {/* Footer */}     
         <footer className="py-10 border-t border-neutral-200/60 dark:border-neutral-800/60">
           <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm">
             <div className="flex items-center justify-center gap-2 text-neutral-600 dark:text-neutral-400">
@@ -910,9 +905,9 @@ export default function Portfolio() {
             </div>
           </div>
         </footer>
-             {" "}
+           
       </div>
-         {" "}
+       
     </div>
   );
 }

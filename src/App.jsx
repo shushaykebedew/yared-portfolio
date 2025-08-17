@@ -217,9 +217,14 @@ export default function Portfolio() {
     e.preventDefault();
 
     emailjs
-      .sendForm("service_nk035cn", "template_mje373y", form.current, {
-        publicKey: "xLbD0Ccqcb1LXXuuZ",
-      })
+      .sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+        }
+      )
       .then(
         () => {
           console.log("SUCCESS!");
@@ -449,8 +454,8 @@ export default function Portfolio() {
                           download
                           className="flex items-center justify-between p-2 bg-neutral-100 dark:bg-neutral-800 rounded-md hover:bg-neutral-200 dark:hover:bg-neutral-700 transition-colors cursor-pointer"
                         >
-                                                    <span>{apk.name}</span>
-                                                   {" "}
+                                                    <span>{apk.name}</span>     
+                                             {" "}
                           <ArrowDownToLine className="w-4 h-4" />               
                                  {" "}
                         </a>
@@ -599,8 +604,8 @@ export default function Portfolio() {
                 </div>
                                {" "}
                 <div className="flex gap-2 items-center max-w-sm w-full">
-                                    <Search className="w-4 h-4" />
-                                   {" "}
+                                    <Search className="w-4 h-4" />             
+                     {" "}
                   <Input
                     placeholder="Search projects, tech…"
                     value={query}
@@ -845,8 +850,8 @@ export default function Portfolio() {
                                {" "}
                 <form ref={form} onSubmit={sendEmail} className="space-y-3">
                                    {" "}
-                  <Input name="from_name" placeholder="Your name" required />
-                                   {" "}
+                  <Input name="from_name" placeholder="Your name" required />   
+                               {" "}
                   <Input
                     name="from_email"
                     type="email"
